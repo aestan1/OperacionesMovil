@@ -9,4 +9,8 @@
     <string name="borrar">Borrar</string>
     <string name="mensaje_error_n1">Digite el numero uno</string>
     <string name="mensaje_error_n2">Digite el numero dos</string>
+    <string name="sumar">+</string>
+    <string name="restar">-</string>
+    <string name="multiplicar">*</string>
+    <string name="dividir">/</string>
 </resources>

@@ -24,13 +24,46 @@ public class Principal extends AppCompatActivity {
 
     }
 
-    public void calcular (View v){
+    public void sumar (View v){
         if(validar()) {
             int num1, num2, resultado;
             num1 = Integer.parseInt(n1.getText().toString());
             num2 = Integer.parseInt(n2.getText().toString());
 
             resultado = num1 + num2;
+            res.setText("" + resultado);
+        }
+    }
+
+    public void restar (View v){
+        if(validar()) {
+            int num1, num2, resultado;
+            num1 = Integer.parseInt(n1.getText().toString());
+            num2 = Integer.parseInt(n2.getText().toString());
+
+            resultado = num1 - num2;
+            res.setText("" + resultado);
+        }
+    }
+
+    public void multiplicar (View v){
+        if(validar()) {
+            int num1, num2, resultado;
+            num1 = Integer.parseInt(n1.getText().toString());
+            num2 = Integer.parseInt(n2.getText().toString());
+
+            resultado = num1 * num2;
+            res.setText("" + resultado);
+        }
+    }
+
+    public void dividir (View v){
+        if(validar()) {
+            int num1, num2, resultado;
+            num1 = Integer.parseInt(n1.getText().toString());
+            num2 = Integer.parseInt(n2.getText().toString());
+
+            resultado = num1 / num2;
             res.setText("" + resultado);
         }
     }
