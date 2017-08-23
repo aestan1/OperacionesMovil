@@ -13,4 +13,13 @@
     <string name="restar">-</string>
     <string name="multiplicar">*</string>
     <string name="dividir">/</string>
+    <string-array name="operaciones">
+        <item>@string/sumar</item>
+        <item>@string/restar</item>
+        <item>@string/multiplicar</item>
+        <item>@string/dividir</item>
+
+
+    </string-array>
+    <string name="operaciones">Operaciones</string>
 </resources>

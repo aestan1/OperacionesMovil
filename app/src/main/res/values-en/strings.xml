@@ -9,4 +9,10 @@
     <string name="titulo">TITTLE</string>
     <string name="mensaje_error_n1">Type Number One</string>
     <string name="mensaje_error_n2">Type Number Two</string>
+    <string name="dividir">divide</string>
+    <string name="multiplicar">Multiply</string>
+    <string name="restar">Substract</string>
+    <string name="sumar">Add</string>
+    <string name="primernumero">FirstNumb</string>
+    <string name="operaciones">Options</string>
 </resources>
