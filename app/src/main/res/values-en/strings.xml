@@ -15,4 +15,5 @@
     <string name="sumar">Add</string>
     <string name="primernumero">FirstNumb</string>
     <string name="operaciones">Options</string>
+    <string name="mensaje_error_tres">can\'t division by zero</string>
 </resources>

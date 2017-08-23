@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Principal extends AppCompatActivity {
     private TextView res;
@@ -31,64 +32,56 @@ public class Principal extends AppCompatActivity {
 
     }
 
-    public void sumar (View v){
+    public void calcular (View v){
+        double num1, num2, resultado=0;
+        int opcion;
+        res.setText("");
         if(validar()) {
-            int num1, num2, resultado;
-            num1 = Integer.parseInt(n1.getText().toString());
-            num2 = Integer.parseInt(n2.getText().toString());
 
-            resultado = num1 + num2;
-            res.setText("" + resultado);
+            opcion = operaciones.getSelectedItemPosition();
+            num1 = Double.parseDouble(n1.getText().toString());
+            num2 = Double.parseDouble(n2.getText().toString());
+            switch (opcion){
+                case 0:
+                    resultado = num1 + num2;
+                    break;
+                case 1:
+                    resultado = num1 - num2;
+                    break;
+                case 2:
+                    resultado = num1 * num2;
+                    break;
+                case 3:
+                    resultado = num1 / num2;
+                    break;
+            }
+            res.setText("" + String.format("%.2f", resultado));
         }
     }
 
-    public void restar (View v){
-        if(validar()) {
-            int num1, num2, resultado;
-            num1 = Integer.parseInt(n1.getText().toString());
-            num2 = Integer.parseInt(n2.getText().toString());
 
-            resultado = num1 - num2;
-            res.setText("" + resultado);
-        }
-    }
-
-    public void multiplicar (View v){
-        if(validar()) {
-            int num1, num2, resultado;
-            num1 = Integer.parseInt(n1.getText().toString());
-            num2 = Integer.parseInt(n2.getText().toString());
-
-            resultado = num1 * num2;
-            res.setText("" + resultado);
-        }
-    }
-
-    public void dividir (View v){
-        if(validar()) {
-            int num1, num2, resultado;
-            num1 = Integer.parseInt(n1.getText().toString());
-            num2 = Integer.parseInt(n2.getText().toString());
-
-            resultado = num1 / num2;
-            res.setText("" + resultado);
-        }
-    }
 
     public void borrar (View v){
         res.setText("");
         n1.setText("");
         n2.setText("");
         n1.requestFocus();
+        operaciones.setSelection(0);
     }
 
     public boolean validar(){
+        int opcion = operaciones.getSelectedItemPosition();
         if(n1.getText().toString().isEmpty()) {
             n1.setError(resources.getString(R.string.mensaje_error_n1));
             return false;
         }
         if(n2.getText().toString().isEmpty()) {
             n2.setError(resources.getString(R.string.mensaje_error_n1));
+            return false;
+        }
+
+        if((Double.parseDouble(n2.getText().toString()))==0&&opcion==3){
+            Toast.makeText(this, resources.getString(R.string.mensaje_error_tres), Toast.LENGTH_SHORT ).show();
             return false;
         }
         return true;

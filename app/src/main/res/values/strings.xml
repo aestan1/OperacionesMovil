@@ -18,8 +18,7 @@
         <item>@string/restar</item>
         <item>@string/multiplicar</item>
         <item>@string/dividir</item>
-
-
     </string-array>
     <string name="operaciones">Operaciones</string>
+    <string name="mensaje_error_tres">No puede hacer divisiones entre cero</string>
 </resources>
